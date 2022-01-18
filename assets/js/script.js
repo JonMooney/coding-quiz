@@ -157,6 +157,40 @@ function answerQuestion(event){
     }
 }
 
+function endQuiz(){
+    document.getElementById("score").textContent = score + " out of " + questions.length;
+    
+    showDiv("completed");
+
+}
+
+function highScores(){
+    var initials = document.getElementById("input-initials").value.toUpperCase();
+
+    console.log(initials)
+    
+    showDiv("high-scores");
+}
+
+// Show DIV Function
+function showDiv(name){
+    // Hide all DIVs to start
+    document.querySelector("#intro").className = "hide";
+    document.querySelector("#quiz").className = "hide";
+    document.querySelector("#high-scores").className = "hide";
+    document.querySelector("#completed").className = "hide";
+
+    // Show DIV based on function parameter
+    document.getElementById(name).className = "show";
+}
+
+// Function to remove all Child Nodes from a Parent
+function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+}
+
 //Add event listeners after page is loaded
 window.onload = function(){
     var buttonStart = document.querySelector("#button-start");
