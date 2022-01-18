@@ -111,6 +111,52 @@ function buildQuestion(){
     listEl.appendChild(option4);
 }
 
+// Answer Question - called when clicking on one of the question <li> elements
+function answerQuestion(event){
+    li = event.target;
+    var str;
+    var correctEl = document.getElementById("correct");
+    
+    // Answered question correctly
+    if(questions[questionNum].answer === parseInt(li.dataset.value)){
+        score ++;
+        correctEl.style.color = "green";
+        correctEl.textContent = "Correct!"
+    // Answered incorrectly
+    }else{
+        timeLeft -= 5;
+        console.log(timeLeft);
+        correctEl.style.color = "red";
+        correctEl.textContent = "Incorrect!"
+    }
+
+    correctEl.style.display = "block";
+    
+    // Only show correct or incorrect for a second
+    var tLeft = 2;
+    var correctInterval = setInterval(function(){
+        if(tLeft > 0){
+            tLeft--;
+        }else{
+            clearInterval(correctInterval);
+            correctEl.style.display = "none";
+        }
+    },300);
+    
+    questionNum++;
+
+    // If more questions are left, clear and build another one
+    if(questionNum < questions.length){
+        clearQuestion();
+        buildQuestion();
+    // Else clear the interval and end the quiz
+    }else{
+        document.getElementById("time-remaining").innerHTML = "";
+        clearInterval(timeInterval);
+        endQuiz();
+    }
+}
+
 //Add event listeners after page is loaded
 window.onload = function(){
     var buttonStart = document.querySelector("#button-start");
