@@ -96,9 +96,22 @@ header{
     font-size:42px;
     color:green;
     border-top:1px solid #CCC;
-
 }
 /* End of Quiz DIV Styling */
+
+/* End of Game - Completed DIV */
+input[type="text"]{
+    display:inline;
+    width:100px;
+    outline:none;
+    padding:10px;
+    font-size:18px;
+}
+
+label{
+    display:inline-flex;
+}
+/* End of Game Styling */
 
 /* High Score Styling */
 #high-scores ul{
@@ -133,3 +146,17 @@ header{
     cursor:pointer;
 }
 /* End of Button Styling */
+
+
+/* Tablet media query */
+@media (max-width: 768px) {
+    #answers li{
+        max-width:100%;
+    }
+    
+}
+
+/* Mobile phone media query */
+@media (max-width: 575px) {
+    
+}
