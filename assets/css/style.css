@@ -1,25 +1,39 @@
 /* Coding Quiz CSS*/
+
+/* Universal CSS */
 *{
     margin:0;
     padding:0;
     box-sizing: border-box;
 }
 
+/* CSS variables */
 :root{
     --light-blue: #1281fa;
     --dark-blue: #0566d1;
 }
 
+/* General CSS */
+.show{display:block;}
+.hide{display:none;}
+
+p{
+    margin:10px 0;
+}
+
+a, a:visited, a:active{
+    color: var(--dark-blue);
+    text-decoration:none;
+}
+
+a:hover{
+    text-decoration:underline;
+}
+/* End of General CSS */
+
 body{
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size:18px;
-}
-
-header{
-    position:relative;
-    max-width:1200px;
-    margin:0 auto;
-    padding:10px 20px;
 }
 
 main{
@@ -28,6 +42,24 @@ main{
     padding:20px;
 }
 
+/* Header Styling */
+header{
+    position:relative;
+    max-width:1200px;
+    margin:0 auto;
+    padding:10px 20px;
+}
+
+#time-remaining{
+    position:absolute;
+    top:15px;
+    right:30px;
+    font-size:24px;
+    color:var(--dark-blue);
+}
+/* End of Header Styling */
+
+/* Intro DIV - Starting of Coding Quiz Game */
 #intro{
     text-align:center;
 }
@@ -35,7 +67,40 @@ main{
 #intro p:first-of-type, #completed p:first-of-type{
     margin-top:30px;
 }
+/* End of Intro DIV */
 
+/* Quiz DIV Styling */
+#answers{
+    list-style-type:none;
+    margin-top:20px;
+}
+
+#answers li{
+    margin:10px 0;
+    padding:10px 15px;
+    background:#8ac0fd;
+    border-radius:10px;
+    color:#000;
+    max-width:50%;
+    word-break:break-all; /* wrap extended text*/
+}
+
+#answers li:hover{
+    background:#61aafc;
+    cursor:pointer;
+}
+
+#correct{
+    margin-top:30px;
+    padding:10px 0;
+    font-size:42px;
+    color:green;
+    border-top:1px solid #CCC;
+
+}
+/* End of Quiz DIV Styling */
+
+/* Button Styling */
 .button{
     margin-top:25px;
     padding:12px 30px;
@@ -49,5 +114,5 @@ main{
 .button:hover{
     background: var(--dark-blue);
     cursor:pointer;
-    
 }
+/* End of Button Styling */
