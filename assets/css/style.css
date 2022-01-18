@@ -1,0 +1,11 @@
+/* Coding Quiz CSS*/
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+:root{
+    --light-blue: #1281fa;
+    --dark-blue: #0566d1;
+}
