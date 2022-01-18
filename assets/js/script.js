@@ -1,10 +1,12 @@
 //Script file for coding quiz
 
+//Global variables
 var score = 0;
 var questionNum = 0;
 var timeInterval;
 var timeLeft = 0;
 
+//Questions object with questions and answer key
 var questions = [
     {
         question: "Which is NOT a commonly used data type: ",
@@ -47,6 +49,67 @@ var questions = [
         answer: 4
     }
 ];
+
+//Start Quiz Function
+function startQuiz(){
+    //Reset global variables for second game round
+    score = 0;
+    questionNum = 0;
+    
+    //setInterval for 60 seconds
+    timeLeft = 60;
+    timeInterval = setInterval(function(){
+        if(timeLeft > 0){
+            document.getElementById("time-remaining").innerHTML = timeLeft;
+            timeLeft--;
+        }else{
+            document.getElementById("time-remaining").innerHTML = "";
+            clearInterval(timeInterval);
+            endQuiz();
+        }
+    }, 1000);
+
+    showDiv("quiz");
+    
+    clearQuestion();
+    
+    buildQuestion();
+}
+
+//Clear the current question data to get ready for the next one
+function clearQuestion(){
+    var listEl = document.getElementById("answers");
+    
+    removeAllChildNodes(listEl);
+}
+
+//Build questions dynamically as user progresses through the quiz
+function buildQuestion(){
+    document.querySelector("#question").textContent = questions[questionNum].question;
+
+    var listEl = document.getElementById("answers");
+  
+    var option1 = document.createElement("li");
+    option1.textContent = "A - " + questions[questionNum].option1;
+    option1.dataset.value = "1";
+
+    var option2 = document.createElement("li");
+    option2.textContent = "B - " + questions[questionNum].option2;
+    option2.dataset.value = "2";
+
+    var option3 = document.createElement("li");
+    option3.textContent = "C - " + questions[questionNum].option3;
+    option3.dataset.value = "3";
+
+    var option4 = document.createElement("li");
+    option4.textContent = "D - " + questions[questionNum].option4;
+    option4.dataset.value = "4";
+
+    listEl.appendChild(option1);
+    listEl.appendChild(option2);
+    listEl.appendChild(option3);
+    listEl.appendChild(option4);
+}
 
 //Add event listeners after page is loaded
 window.onload = function(){
