@@ -21,3 +21,33 @@ header{
     margin:0 auto;
     padding:10px 20px;
 }
+
+main{
+    max-width:1200px;
+    margin:60px auto;
+    padding:20px;
+}
+
+#intro{
+    text-align:center;
+}
+
+#intro p:first-of-type, #completed p:first-of-type{
+    margin-top:30px;
+}
+
+.button{
+    margin-top:25px;
+    padding:12px 30px;
+    background: var(--light-blue);
+    border:none;
+    border-radius:8px;
+    color:#FFF;
+    font-size:18px;
+}
+
+.button:hover{
+    background: var(--dark-blue);
+    cursor:pointer;
+    
+}
