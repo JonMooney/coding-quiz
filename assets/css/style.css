@@ -100,6 +100,23 @@ header{
 }
 /* End of Quiz DIV Styling */
 
+/* High Score Styling */
+#high-scores ul{
+    list-style-type:none;
+}
+
+#high-scores ul li{
+    padding:10px 15px;
+    background:#8ac0fd;
+    border-radius:10px;
+    color:#000;
+}
+
+#score-list{
+    margin-top:30px;
+}
+/* End of High Score Styling */
+
 /* Button Styling */
 .button{
     margin-top:25px;

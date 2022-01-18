@@ -18,6 +18,7 @@
     </header>
 
     <main>
+        <!--Intro DIV - Game Start-->
         <div id="intro">
             <h1>Coding Quiz Challenge</h1>
             
@@ -33,6 +34,33 @@
 
             <button class="button" id="button-start">Start Quiz</button>
         </div>
+        <!--End of Intro DIV-->
+
+        <!--Quiz - Questions-->
+        <div id="quiz" class="hide">
+            <h1 id="question"></h1>
+
+            <ul id="answers"></ul>
+
+            <div id="correct" class="hide">
+                CORRECT!
+            </div>
+        </div>
+        <!--End of Quiz - Questions-->
+
+        <!--High Scores-->
+        <div id="high-scores" class="hide">
+            <h1>High Scores</h1>
+
+            <ul id="score-list">
+                <li class="score-item">example</li>
+            </ul>
+
+            <button class="button" id="button-back">Go Back</button>
+
+            <button class="button" id="button-clear">Clear High Scores</button>
+        </div>
+        <!--End of High Scores-->
     </main>
     
 </body>
