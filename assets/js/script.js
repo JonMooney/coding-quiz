@@ -50,6 +50,7 @@ var questions = [
         answer: 4
     }
 ];
+// End of questions object
 
 //Start Quiz Function
 function startQuiz(){
@@ -76,6 +77,7 @@ function startQuiz(){
     
     buildQuestion();
 }
+// End of start quiz function
 
 //Clear the current question data to get ready for the next one
 function clearQuestion(){
@@ -161,14 +163,16 @@ function endQuiz(){
     document.getElementById("score").textContent = score;
     
     showDiv("completed");
-
 }
 
 function viewScores(){
     buildScores();
+    clearInterval(timeInterval);
+    document.getElementById("time-remaining").innerHTML = "";
     showDiv("high-scores");
 }
 
+// Build the <ul> <li> elements based on the highscores object
 function buildScores(){
     //Load score list ul element
     scorelistEl = document.querySelector("#score-list");
@@ -245,6 +249,7 @@ window.onload = function(){
 
     buttonClear.addEventListener("click", function(){
         highscores = [];
+        localStorage.removeItem("highscores");
         viewScores();
     });
 
