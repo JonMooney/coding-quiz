@@ -11,7 +11,7 @@
 <body>
     <header>
         <div>
-            <a href="javascript:void(0);" onclick="viewHighScores();">View High Scores</a>
+            <a href="javascript:void(0);" onclick="viewScores();">View High Scores</a>
         </div>
         
         <div id="time-remaining"></div>
@@ -70,9 +70,9 @@
         <div id="high-scores" class="hide">
             <h1>High Scores</h1>
 
-            <ul id="score-list">
-                <li class="score-item">example</li>
-            </ul>
+            <ul id="score-list"></ul>
+
+            <p id="no-scores" class="hide">No high scores available</p>
 
             <button class="button" id="button-back">Go Back</button>
 
