@@ -12,6 +12,7 @@ Visit the live site at the following URL:<br>
 
 ## Screenshots
 <img src="./assets/images/screenshot.jpg" alt="screenshot of question from coding quiz" /><br>
+<hr>
 <img src="./assets/images/screenshot2.jpg" alt="screenshot of high scores from coding quiz" />
 
 
